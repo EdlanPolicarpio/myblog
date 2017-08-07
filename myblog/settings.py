@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #my installed apps
     'posts',
+
 ]
 
 MIDDLEWARE = [
