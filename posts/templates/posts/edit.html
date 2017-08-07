@@ -1,0 +1,9 @@
+{% extends "posts/base.html" %}
+{% block content %}
+  <h1> {{entry.slug}}</h1>
+  <form action="/edit/{{entry.slug}}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit" />
+  </form>
+{% endblock %}
