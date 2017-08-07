@@ -1,0 +1,30 @@
+ <ul>
+   {% for post in object_list %}
+     <li>
+       <a href="/post/{{post.slug}}">
+         {{post.title}}
+       </a>
+     </li>
+   {% endfor %}
+ </ul>
+<!-- generic pagination --!>
+{% if is_paginated %}
+  <nav>
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+        <li>
+	  <a href ="?page={{page_obj.previous_page_number}}">
+	    prev
+	  </a>
+	</li>
+      {% endif %}
+      {% if page_obj.has_next %}
+        <li>
+	  <a href ="?page={{page_obj.next_page_number}}">
+	    next
+	  </a>
+	</li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
